@@ -12,7 +12,6 @@
 class Parser : public QObject
 {
     Q_OBJECT
-    //static bool pred(const QPair<QString,int> &a, const QPair<QString,int> &b);
 public:
     Parser();
     ~Parser();
@@ -20,7 +19,6 @@ public:
     Q_PROPERTY(const QVariantMap data READ data NOTIFY dataChanged)
     Q_PROPERTY(int maxCount READ maxCount NOTIFY maxYAxisChanged)
     Q_PROPERTY(bool loading READ loading NOTIFY dataLoading)
-
 
     QVariantMap data() const
     {
@@ -35,7 +33,6 @@ public:
         return m_loading;
     }
 public slots:
-    void parse(const QVariantMap& data);
     void transitData(const QVariantMap& data);
     void transitMaxCount(int maxCount);
     void transitLoading(bool loading);

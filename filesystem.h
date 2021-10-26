@@ -11,7 +11,6 @@ class FileSystem : public QObject
 public:
     explicit FileSystem(QObject *parent = nullptr);
     static QByteArray readFile(QString path);
-signals:
 
 };
 

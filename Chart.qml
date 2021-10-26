@@ -15,15 +15,10 @@ Item {
         clearChart()
         for(var i in parser.data) {
             var p = parser.data[i];
-            //console.log(i, "=", p)
-            //barSer.append(i,p)
-            //count.push(p)
             wrd.append(p, 0)
             wordCategories.push(i)
         }
-        //wrd.append(8, 0)
         barCategoriesAxis.categories = wordCategories
-        //barSet.values = count
     }
     function clearChart() {
         wordCategories = []
@@ -54,27 +49,19 @@ Item {
             spacing: 0
             ChartView {
                 id: barSeriesChart
-                //title: "Bar series"
-//                Layout.fillWidth: true
-//                Layout.fillHeight: true
                 width: chartItem.width
                 height: chartItem.height
                 animationOptions: ChartView.SeriesAnimations
-                //anchors.fill: parent
-                //legend.alignment: Qt.AlignBottom
                 antialiasing: true
 
                 BarCategoryAxis {
                     id: barCategoriesAxis
-                    //titleText: "Words"
                 }
                 ValueAxis{
                     id: valueAxisY2
-                    //tickType: ValueAxis.TicksFixed
                     tickCount: 6
                     min: 0
                     max: 10
-                    //titleText: "Count"
                 }
                 HorizontalBarSeries {
                     id: myBarSeries

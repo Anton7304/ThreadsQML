@@ -34,7 +34,6 @@ Window {
             text: "Открыть файл"
             onClicked: {
                 filePicker.open()
-                //progressRect.visible = true
             }
         }
         Button {
@@ -42,14 +41,13 @@ Window {
             text: "Очистить"
             onClicked: {
                 chart.clearChart()
-                //progressRect.visible = true
             }
         }
     }
     Rectangle {
         id: progressRect
         anchors.fill: parent
-        //color: "#80FFFFFF"
+        color: "#80FFFFFF"
         visible: false
         ProgressBar {
             anchors.verticalCenter: parent.verticalCenter
@@ -58,7 +56,6 @@ Window {
         }
 
     }
-
 
     FileDialog {
         id: filePicker

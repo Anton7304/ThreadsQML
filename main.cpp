@@ -8,12 +8,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication app(argc, argv);
-    //FileIO fileIO;
-
-    //QHash<QString, int> wordsCount;
 
     QQmlApplicationEngine engine;
-    //engine.rootContext()->setContextProperty("fileio", &fileIO);
     qmlRegisterType<Parser>("ru.test.parser", 1, 0, "Parser");
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     engine.thread()->setObjectName("MainThread");

@@ -19,7 +19,7 @@ void Parser::parseFile(QString path)
     WordsCalc * wordsCalc = new WordsCalc;
     wordsCalc->setFileData(FileSystem::readFile(path));
     qDebug() << "Now WordsCalc is placed in: " << wordsCalc->thread();
-    wordsCalc->moveToThread(&thread1);
+    wordsCalc->moveToThread(&thread1);//переводим класс для расчётов в отдельный поток
     qDebug() << "Now WordsCalc is placed in: " << wordsCalc->thread();
 
     connect(wordsCalc, &WordsCalc::dataLoading,this,&Parser::transitLoading);

@@ -26,16 +26,16 @@ Item {
             wrd.remove(i)
         }
         barCategoriesAxis.clear()
-        valueAxisY2.min = 0
-        valueAxisY2.max = 10
-        valueAxisY2.tickCount = 6
+        valueAxisY.min = 0
+        valueAxisY.max = 10
+        valueAxisY.tickCount = 6
         setMaxAxisY()
     }
 
     function setMaxAxisY() {
-        if(valueAxisY2.max < parser.maxCount){
-            valueAxisY2.max = parser.maxCount
-            valueAxisY2.applyNiceNumbers()
+        if(valueAxisY.max < parser.maxCount){
+            valueAxisY.max = parser.maxCount
+            valueAxisY.applyNiceNumbers()
         }
     }
 
@@ -58,7 +58,7 @@ Item {
                     id: barCategoriesAxis
                 }
                 ValueAxis{
-                    id: valueAxisY2
+                    id: valueAxisY
                     tickCount: 6
                     min: 0
                     max: 10
@@ -66,7 +66,7 @@ Item {
                 HorizontalBarSeries {
                     id: myBarSeries
                     axisY: barCategoriesAxis
-                    axisX: valueAxisY2
+                    axisX: valueAxisY
                     BarSet {
                         id: wrd
                         label: "TEST"
